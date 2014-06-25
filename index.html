@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+  <meta charset="utf-8">
+  <title class="title">HuePalette</title>
+  <meta name="apple-mobile-web-app-title">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/octicons.css">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+</head>
+<body id="tapZap">
+  <div class="viewport">
+    <!-- Default Layout -->
+    <section class="template" id="wizard">
+      <article class="content"></article>
+    </section>
+    <!-- Alternate Layout -->
+    <section class="template" id="app">
+      <article class="content"></article>
+      <nav class="menu"></nav>
+    </section>
+  </div>
+  <!-- Menu -->
+  <script type="text/html" id="menu">
+   <a href="#bulbs"><span class="mega-octicon octicon-light-bulb"></span></a>
+   <a href="#scenes"><span class="mega-octicon octicon-list-unordered"></span></a>
+   <a href="#control"><span class="mega-octicon octicon-settings"></span></a>
+   <a href="#settings"><span class="mega-octicon octicon-gear"></span></a>
+  </script>
+  <!-- First-Run Content -->
+  <script type="text/html" id="firstRun_content">
+    <p><strong>Welcome to the first-run wizard!</strong></p>
+    <ul> 
+      <li>search for hubs</li>
+      <li>store handshake in <code>sessionStorage</code></li>
+    </ul>
+    <a href="#bulb">Enter</button>
+  </script>
+  <!-- Bulbs Content -->
+  <script type="text/html" id="bulbs_content">
+    <p>This is <strong>Bulbs Content</strong>
+    <p>Here we might be able to set the colour for each controlled bulb, and possibly save a scene to 'My Scenes'</p>
+  </script>
+  <!-- Scenes Content -->
+  <script type="text/html" id="scenes_content">
+    <p>This is <strong>Scenes Content</strong></p>
+    <p>This view might have your saved scenes, with the option of sharing/exporting them so you can send them to friends, post them online, or back up and manage your scenes off the device.</p>
+  </script>
+  <!-- Control Content -->
+  <script type="text/html" id="control_content">
+    <p>This is <strong>Live Control Content</strong></p>
+    <p>This view might show you control over which lights are selected, or allow you to change properties about the lights as they get used in the other views.</p>
+  </script>
+  <!-- Settings Content -->
+  <script type="text/html" id="settings_content">
+    <p>This is <strong>Settings Content</strong></p>
+    <p>This view sould contain your settings, saved to <code>localStorage</code></p>
+    <button onclick="clearFirstRun();">Do First-Run Wizard Again</button>
+  </script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <script src="js/data.js" type="text/javascript"></script>
+  <script src="js/tapZap.js" type="text/javascript"></script>
+</body>
+</html>
